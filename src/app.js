@@ -21,7 +21,6 @@ app.use(multer({
 }).single('image'));
 
 // Routes
-app.use(from('./routes/index'));
 
 
 app.get('/',async (req,res)=>{
