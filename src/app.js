@@ -13,7 +13,12 @@ app.set('view engine','ejs');
 
 // Middlewares
 app.use(morgan('dev'));
-
+app.use(express.urlencoded({
+    extended: false
+}));
+app.use(multer({
+    dest: path.join('./','public/img/uploads')
+}).single('image'));
 
 app.get('/',async (req,res)=>{
     const [row] =await pool.query('SELECT * FROM users')
