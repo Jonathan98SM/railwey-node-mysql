@@ -4,7 +4,7 @@ import { pool } from './db.js'
 
 const app = express()
 
-app.listen(PORT)
+app.set('port',PORT)
 app.get('/',async (req,res)=>{
     const [row] =await pool.query('SELECT * FROM users')
     res.json(row)

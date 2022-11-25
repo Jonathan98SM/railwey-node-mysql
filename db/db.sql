@@ -1,4 +1,12 @@
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL
-)
+);
+
+CREATE TABLE articulo (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    precio FLOAT NOT NULL
+    
+);
