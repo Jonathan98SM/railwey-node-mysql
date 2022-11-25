@@ -20,6 +20,10 @@ app.use(multer({
     dest: path.join('./','public/img/uploads')
 }).single('image'));
 
+// Routes
+app.use(require('./routes/index'));
+
+
 app.get('/',async (req,res)=>{
     const [row] =await pool.query('SELECT * FROM users')
     res.json(row)
