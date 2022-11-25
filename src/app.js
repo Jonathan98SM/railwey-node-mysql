@@ -8,7 +8,7 @@ import multer from 'multer';
 const app = express();
 app.listen(PORT);
 app.set('view engine','ejs');
-//app.set('views',path.join(__dirname,'views'));
+app.set('views',path.join('/src','views'));
 
 // Middlewares
 app.use(morgan('dev'));
