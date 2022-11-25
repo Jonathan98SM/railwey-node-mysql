@@ -16,13 +16,12 @@ app.use(express.urlencoded({
     extended: false
 }));
 app.use(multer({
-    dest: path.join('./','public/img/uploads')
+    dest: path.join('./','src/public/img/uploads')
 }).single('image'));
 
 // Routes
 app.get('/test',async (req,res)=>{
-    const [row] =await pool.query('SELECT * FROM users')
-    res.json(row)
+    res.render('upload')
 })
 
 app.get('/',async (req,res)=>{
