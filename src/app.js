@@ -22,7 +22,7 @@ app.use(multer({
 }).single('image'));
 
 // Routes
-router.get('/test',(req,res)=>{
+app.get('/test',(req,res)=>{
     res.send('Prueba Correcta');
 })
 
