@@ -1,4 +1,5 @@
 import express from 'express';
+import { Router } from "express";
 import path from 'path';
 import { PORT } from './config.js';
 import { pool } from './db.js' ;
@@ -6,7 +7,7 @@ import morgan from 'morgan';
 import multer from 'multer';
 
 const app = express();
-
+const router = Router();
 app.listen(PORT);
 app.set('view engine','ejs');
 //app.set('views',path.join(__dirname,'views'));
@@ -21,7 +22,9 @@ app.use(multer({
 }).single('image'));
 
 // Routes
-
+router.get('/test',(req,res)=>{
+    res.send('Prueba Correcta');
+})
 
 app.get('/',async (req,res)=>{
     const [row] =await pool.query('SELECT * FROM users')
