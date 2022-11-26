@@ -4,7 +4,7 @@ import { PORT } from './config.js';
 import { pool } from './db.js' ;
 import morgan from 'morgan';
 import multer from 'multer';
-import uuid from 'uuid/v4'
+
 
 const app = express();
 app.listen(PORT);
@@ -20,7 +20,7 @@ app.use(express.urlencoded({
 const storage =multer.diskStorage({
     destination: '../src/public/img/uploads',
     filename:(req,file,cb,filename)=>{
-        cb(null,uuid()+path.extname(file.originalname))
+        cb(null,'subido'+file.originalname)
     }
 });
 app.use(multer({
