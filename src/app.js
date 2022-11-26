@@ -17,7 +17,7 @@ app.use(express.urlencoded({
     extended: false
 }));
 app.use(multer({
-    dest: path.join('./','src/public/img/uploads')
+    dest: 'public/img/uploads'
 }).single('image'));
 
 // Routes
