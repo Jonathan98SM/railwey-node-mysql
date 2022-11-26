@@ -18,14 +18,17 @@ app.use(express.urlencoded({
     extended: false
 }));
 app.use(multer({
-    dest: 'public/img/uploads'
+    dest: '../src/public/img/uploads'
 }).single('image'));
 
 // Routes
-app.get('/test',async (req,res)=>{
+app.get('/upload',async (req,res)=>{
     res.render('../src/views/upload.ejs')
 })
-
+app.post('/upload',async (req,res)=>{
+    console.log(req.file);
+    res.send('uploaded');
+})
 app.get('/',async (req,res)=>{
     const [row] =await pool.query('SELECT * FROM users')
     res.json(row)
