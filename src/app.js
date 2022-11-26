@@ -26,8 +26,7 @@ app.get('/upload',async (req,res)=>{
     res.render('../src/views/upload.ejs')
 })
 app.post('/upload',async (req,res)=>{
-    console.log(req.file);
-    res.send('uploaded');
+    res.json(req.file)
 })
 app.get('/',async (req,res)=>{
     const [row] =await pool.query('SELECT * FROM users')
