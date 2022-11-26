@@ -5,10 +5,11 @@ import { pool } from './db.js' ;
 import morgan from 'morgan';
 import multer from 'multer';
 
+
 const app = express();
 app.listen(PORT);
 app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'views'));
+app.set('views','../src/views');
 
 // Middlewares
 app.use(morgan('dev'));
