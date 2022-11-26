@@ -17,13 +17,14 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({
     extended: false
 }));
-multer.diskStorage({
+const storage =multer.diskStorage({
+    destination: '../src/public/img/uploads',
     filename:(req,file,cb,filename)=>{
         cb(null,uuid()+path.extname(file.originalname))
     }
 });
 app.use(multer({
-    dest: '../src/public/img/uploads'
+    storage:storage
 }).single('image'));
 
 // Routes
