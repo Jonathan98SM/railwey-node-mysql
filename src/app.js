@@ -9,7 +9,7 @@ import multer from 'multer';
 const app = express();
 app.listen(PORT);
 
-app.set('views','../src/views');
+//app.set('views','../src/views');
 app.set('view engine','ejs');
 
 // Middlewares
@@ -23,7 +23,7 @@ app.use(multer({
 
 // Routes
 app.get('/test',async (req,res)=>{
-    res.render('upload')
+    res.render('../src/views/upload.ejs')
 })
 
 app.get('/',async (req,res)=>{
