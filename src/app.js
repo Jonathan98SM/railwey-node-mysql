@@ -22,7 +22,7 @@ app.use(multer({
 
 // Routes
 app.get('/test',async (req,res)=>{
-    res.render('../src/views/upload.ejs')
+    res.render('upload')
 })
 
 app.get('/',async (req,res)=>{
